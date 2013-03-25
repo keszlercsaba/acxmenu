@@ -1,0 +1,12 @@
+*{font:bold 12px Arial,'Lucida Grande','Trebuchet MS',Verdana,Helvetica,sans-serif;margin:0;padding:0}
+.m0 a{background:#abc;border-radius:5px;border-bottom:#567 1px solid;border-right:#567 1px solid;color:#fff;display:block;height:22px;line-height:22px;position:relative;text-decoration:none;text-indent:17px;width:150px}
+.m1 a{background:#bcd;color:#567;text-indent:28px}
+.m2 a{background:#cde;color:#567;text-indent:39px}
+.m3 a{background:#def;color:#567;text-indent:50px}
+.m0 a:hover{background:#eef3f9;color:#246}
+.himg{background:url('http://s20.postimg.org/z29irnk61/hbg.png') no-repeat 0 0;border:none;height:14px;cursor:default;position:absolute;left:2px;top:4px;width:14px}
+.h2 .himg{left:13px}
+.h3 .himg{left:24px}
+a.lm,a.lm:hover{background:#eef3f9;color:#f60}
+/*optinal*/
+p{color:#246;cursor:pointer}
