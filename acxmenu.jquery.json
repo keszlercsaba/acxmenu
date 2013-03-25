@@ -1,0 +1,37 @@
+{
+  "name": "acxmenu",
+  "title": "Acxmenu - multilevel jquery accordion menu",
+  "description": "Acxmenu - multilevel jquery accordion menu plugin for jQuery.",
+  "keywords": [
+    "accordion",
+    "ui",
+    "navigation",
+    "multilevel"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Csaba Keszler",
+    "url": "https://code.google.com/p/acxmenu/"
+  },
+  "maintainers": [
+    {
+      "name": "Csaba Keszler",
+      "email": "keszlercsaba@gmail.com",
+      "url": "https://code.google.com/p/acxmenu/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://code.google.com/p/acxmenu/issues/list",
+  "homepage": "https://code.google.com/p/acxmenu/",
+  "demo": "http://jsfiddle.net/keszlercsaba/qqwPS/",
+  "docs": "https://code.google.com/p/acxmenu/w/list",
+  "download": "https://code.google.com/p/acxmenu/downloads/list",
+  "dependencies": {
+    "jquery": ">=1.6"
+  }
+}
