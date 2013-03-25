@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang=ro><head><title>Acxmenu multilevel jquery accordion</title>
+<meta charset="utf-8"><meta name=author content="Csaba Keszler">
+<meta name=description content="Multilevel accordion menu based on item index">
+<style type="text/css">
+*{font:bold 12px Arial,'Lucida Grande','Trebuchet MS',Verdana,Helvetica,sans-serif;margin:0;padding:0}
+.m0 a{background:#abc;border-radius:5px;border-bottom:#567 1px solid;border-right:#567 1px solid;color:#fff;display:block;height:22px;line-height:22px;position:relative;text-decoration:none;text-indent:17px;width:150px}
+.m1 a{background:#bcd;color:#567;text-indent:28px}
+.m2 a{background:#cde;color:#567;text-indent:39px}
+.m3 a{background:#def;color:#567;text-indent:50px}
+.m0 a:hover{background:#eef3f9;color:#246}
+.himg{background:url('http://s20.postimg.org/z29irnk61/hbg.png') no-repeat 0 0;border:none;height:14px;cursor:default;position:absolute;left:2px;top:4px;width:14px}
+.h2 .himg{left:13px}
+.h3 .himg{left:24px}
+a.lm,a.lm:hover{background:#eef3f9;color:#f60}
+/*for horizontal menu*/
+#m1{height:141px;left:200px;overflow:hidden;position:absolute;top:0;width:915px}
+#m1 a{height:140px;text-align:center;text-indent:15px;width:60px}
+#m1 a,#m1 div{float:left;top:0}
+#m1 .himg{left:2px}
+/*optinal*/
+p{color:#246;cursor:pointer}
+</style>
+</head><body>
+<div id=m0 class=m0>
+<a href="">Item 1.1</a>
+<a id=smap href="">Item 1.2 - Sitemap</a>
+<a class=h1 href="">Header 1.3</a><div class=m1>
+<a class=h2 href="">Header 1.3.1</a><div class=m2><a href="">Item 1.3.1.1</a><a href="">Item 1.3.1.2</a></div>
+<a class=h2 href="">Header 1.3.2</a><div class=m2><a href="">Item 1.3.2.1</a><a href="">Item 1.3.2.2</a><a href="">Item 1.3.2.3</a></div>
+<a class=h2 href="">Header 1.3.3</a><div class=m2><a href="">Item 1.3.3.1</a><a href="">Item 1.3.3.2</a><a href="">Item 1.3.3.3</a></div>
+<a href="">Item 1.3.4</a><a href="">Item 1.3.5</a><a href="">Item 1.3.6</a></div>
+<a class=h1 href="">Header 1.4</a><div class=m1>
+<a class=h2 href="">Header 1.4.1</a><div class=m2><a href="">Item </a><a href="">Item </a></div>
+<a class=h2 href="">Header 1.4.2</a><div class=m2><a href="">Item </a><a href="">Item </a></div>
+<a class=h2 href="">Header 1.4.3</a><div class=m2><a href="">Item </a><a href="">Item </a><a href="">Item </a></div>
+<a href="">Item 1.4.4</a><a href="">Item 1.4.5</a><a href="">Item 1.4.6</a></div>
+<a class=h1 href="">Header  1.5</a><div class=m1>
+<a class=h2 href="">Header 1.5.1</a><div class=m2><a href="">Item 1.5.1.1</a><a href="">Item 1.5.1.2</a><a href="">Item 1.5.1.3</a></div>
+<a class=h2 href="">Header 1.5.2</a><div class=m2><a href="">Item 1.5.2.1</a><a href="">Item 1.5.2.2</a></div>
+<a class=h2 href="">Header 1.5.3</a><div class=m2><a href="">Item 1.5.3.1</a><a href="">Item 1.5.3.2</a></div>
+<a href="">Item 1.5.4</a><a href="">Item 1.5.5</a><a href="">Item 1.5.6</a></div>
+<a class=h1 href="">Header 1.6</a><div class=m1>
+<a class=h2 href="">Header 1.6.1</a><div class=m2>
+<a class=h3 href="">Header 1.6.1.1</a><div class=m3><a href="">Item 1.6.1.1.1</a><a href="">Item 1.6.1.1.2</a></div>
+<a class=h3 href="">Header 1.6.1.2</a><div class=m3><a href="">Item 1.6.1.2.1</a><a href="">Item 1.6.1.2.2</a><a href="">Item 1.6.1.2.3</a></div>
+<a class=h3 href="">Header 1.6.1.3</a><div class=m3><a href="">Item 1.6.1.3.1</a><a href="">Item 1.6.1.3.2</a><a href="">Item 1.6.1.3.3</a></div>
+<a class=h3 href="">Header 1.6.1.4</a><div class=m3><a href="">Item 1.6.1.4.1</a><a href="">Item 1.6.1.4.2</a></div>
+<a href="">Item 1.6.1.5</a><a href="">Item 1.6.1.6</a><a href="">Item 1.6.1.7</a></div>
+<a class=h2 href="">Header 1.6.2</a><div class=m2>
+<a class=h3 href="">Header 1.6.2.1</a><div class=m3><a href="">Item 1.6.2.1.1</a><a href="">Item 1.6.2.1.2</a></div>
+<a class=h3 href="">Header 1.6.2.2</a><div class=m3><a href="">Item 1.6.2.2.1</a><a href="#m0">Item 1.6.2.2.2</a></div>
+<a class=h3 href="">Header 1.6.2.3</a><div class=m3><a href="">Item 1.6.2.3.1</a><a href="">Item 1.6.2.3.2</a><a href="">Item 1.6.2.3.3</a></div>
+<a href="">Item 1.6.2.4</a><a href="">Item 1.6.2.5</a><a href="">Item 1.6.2.6</a></div>
+<a href="">Item 1.6.3</a><a href="">Item 1.6.4</a><a href="">Item 1.6.5</a></div>
+<a href="">Item 1.7</a>
+<a href="">Item 1.8</a>
+</div>
+<!-- optional -->
+<br>
+<p onclick="acxmenu('#m0 a:eq(54)')">- Open item 54</p>
+<p>- Open item where "href" contain "m0"</p>
+<br>
+<div id=m1 class=m0>
+<a href="">Item 1.1</a>
+<a href="">Item 1.2</a>
+<a class=h1 href="">Header 1.3</a>
+<div class=m1>
+<a class=h2 href="">Header 1.3.1</a><div class=m2><a href="">Item 1.3.1.1</a><a href="">Item 1.3.1.2</a></div>
+<a class=h2 href="">Header 1.3.2</a><div class=m2><a href="">Item 1.3.2.1</a><a href="">Item 1.3.2.2</a></div>
+<a href="">Item 1.3.3</a>
+</div>
+<a class=h1 href="">Header 1.4</a>
+<div class=m1>
+<a class=h2 href="">Header 1.4.1</a><div class=m2><a href="">Item 1.4.1.1</a><a href="">Item 1.4.1.2</a></div>
+<a href="">Item 1.4.2</a><a href="">Item 1.4.3</a>
+</div>
+<a class=h1 href="">Header  1.5</a>
+<div class=m1>
+<a class=h2 href="">Header 1.5.1</a><div class=m2><a href="">Item 1.5.1.1</a><a href="">Item 1.5.1.2</a></div>
+<a class=h2 href="">Header 1.5.2</a><div class=m2><a href="">Item 1.5.2.1</a><a href="">Item 1.5.2.2</a></div>
+<a href="">Item 1.5.3</a><a href="">Item 1.5.4</a>
+</div>
+<a class=h1 href="">Header 1.6</a>
+<div class=m1>
+<a class=h2 href="">Header 1.6.1</a>
+<div class=m2>
+<a class=h3 href="">Header 1.6.1.1</a><div class=m3><a href="">Item 1.6.1.1.1</a><a href="">Item 1.6.1.1.2</a></div>
+<a class=h3 href="">Header 1.6.1.2</a><div class=m3><a href="">Item 1.6.1.2.1</a><a href="">Item 1.6.1.2.2</a></div>
+<a href="">Item 1.6.1.3</a>
+</div>
+<a class=h2 href="">Header 1.6.2</a>
+<div class=m2>
+<a class=h3 href="">Header 1.6.2.1</a><div class=m3><a href="">Item 1.6.2.1.1</a><a href="">Item 1.6.2.1.2</a></div>
+<a class=h3 href="">Header 1.6.2.2</a><div class=m3><a href="">Item 1.6.2.2.1</a><a href="#m0">Item 1.6.2.2.2</a></div>
+<a href="">Item 1.6.2.3</a>
+</div>
+<a href="">Item 1.6.3</a>
+</div>
+<a href="">Item 1.7</a>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+// +++ acxmenu - Author:Csaba Keszler, Homepage:https://code.google.com/p/acxmenu/
+// Licensed under the MIT license:http://www.opensource.org/licenses/mit-license.php
+y1=0; //background-position open
+y2=-20; //background-position close
+ac=0;
+var set={'m0':{ //settings var name = menu id
+'h':1, //header image: 0(false), 1(true)
+'i':0, //initial expanding level
+'j':1, //jump backwards: 0(false), 1(true)
+'l':3, //must be set to the maximum menulevel
+'m':0, //mouseover: 0(false), 1(true)
+'p':0, //position: 0(vertical), 1(horizontal)
+'s':'slow', //speed: 'fast', 'normal', 'slow', ...
+'t':0 //toggle: 0(self open, else close), 1(self toggle, else close), 2(self toggle)
+},'m1':{
+'h':1,
+'i':1,
+'j':0,
+'l':3,
+'m':0,
+'p':1,
+'s':'slow',
+'t':1
+}};
+function acxmenu(x){
+  if(ac==1)return false;
+	else ac=1;
+	var b=$(x),c=b.closest('.m0'),d=c[0].id,m=b.next(),n,o,p=[],q=[],r=set[d],i,j,h,w;
+	for(i=1;i<=r.l;i++){
+		n='#'+d+' .m'+i;
+		o=m.index(n);
+		p[i]=b.closest(n);
+		if(o>=0){
+			if(r.t===0||(r.t>0&&m.is(':hidden')))p[i]=m;
+			if(r.t===0||(r.t==1&&m.is(':hidden'))||(r.t==2&&m.is(':visible')))q[i]=o;
+		}
+		if(r.t<2){
+			q[i]=p[i].index(n);
+			j=q[i]>=0?':not(:eq('+q[i]+'))':'';
+		}
+		else j=':eq('+q[i]+')';
+		h=r.p<1?'hide':b.outerHeight();
+		w=r.p>0?'hide':b.outerWidth();
+		c.find('.m'+i+j).animate({height:h,width:w},r.s);
+		imgpos(c.find('.h'+i+j),y2);
+		if(r.p<1)h='show';else w='show';
+		p[i].animate({height:h,width:w},r.s);
+		imgpos(p[i].prev(),y1);
+	}
+	c.find('a').removeClass('lm');
+	b.addClass('lm').focus();
+	setTimeout(function(){ac=0;},333);
+}
+function imgpos(i,p){i.find('span').css('background-position',"0 "+p+"px");}
+function knav(x,e,k){
+	if(k==9){
+		k=e.shiftKey?38:40;
+		knav(x,e,k);
+		e.preventDefault();
+		return false;
+	}
+	var c=$(x).closest('.m0'),a=c.find('a'),d=c[0].id,i=a.index(x),l=a.length,p;
+	if(k>36&&k<41){
+		if(k<39)i=(i===0)?l-1:i-1;
+		else i=(i==l-1)?0:i+1;
+		if(set[d].j>0){
+			p=a.eq(i).closest('div[class*="m"]');
+			if(p.is(':hidden'))i=a.index(p.prev());
+		}
+		acxmenu('#'+d+' a:eq('+i+')');
+	}
+	if(k==13)$(x).attr('href');
+}
+$(function(){
+	for(var i in set){
+		var j,r=set[i],m=$('#'+i),n;
+		for(j=r.l;j>0;j--){
+			if(r.h==1)m.find('.h'+j).append("<span class='himg'></span>");
+			if(r.i<j){
+				n=m.find('.m'+j);
+				n.hide();
+				if(r.h==1)imgpos(n.prev(),y2);
+			}
+		}
+	}
+	$('#m0 a,#m1 a').click(function(){acxmenu(this);})
+	.keydown(function(e){knav(this,e,e.which);})
+	.mouseover(function(){
+		var r=set[$(this).closest('.m0')[0].id];
+		if(r.m>0)acxmenu(this);
+	});
+	$('.himg').click(function(){
+		acxmenu($(this).parent());
+		return false;
+	});
+    //optional
+	$('#smap').unbind('click').click(function(){
+		acxmenu('#m0 a');
+		$('#m0 a').removeClass('lm');
+		$(this).addClass('lm').focus();
+	});
+	acxmenu('#m0 a:eq(12)');
+	$('p').eq(1).click(function(){acxmenu('#m0 a[href*="m0"]');});
+	$('a[href=""]').click(function(){return false;});
+});
+</script></body></html>
