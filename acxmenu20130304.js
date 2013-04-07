@@ -16,7 +16,7 @@ var set={'m0':{ //settings var name = menu id
 function acxmenu(x){
   if(ac==1)return false;
 	else ac=1;
-	var b=$(x),c=b.closest('.m0'),d=c[0].id,m=b.next(),n,o,p=[],q=[],r=set[d],i,j;
+	var b=$(x),c=b.closest('.m0'),d=c[0].id,m=b.next(),n,o,p=[],q=[],r=set[d],i,j,h,w;
 	for(i=1;i<=r.l;i++){
 		n='#'+d+' .m'+i;
 		o=m.index(n);
@@ -32,15 +32,15 @@ function acxmenu(x){
 		else j=':eq('+q[i]+')';
 		h=r.p<1?'hide':b.outerHeight();
 		w=r.p>0?'hide':b.outerWidth();
-		c.find('.m'+i+j).animate({height:'hide',width:'hide'},r.s);
+		c.find('.m'+i+j).animate({height:h,width:w},r.s);
 		imgpos(c.find('.h'+i+j),y2);
 		if(r.p<1)h='show';else w='show';
-		p[i].animate({height:'show',width:'show'},r.s);
+		p[i].animate({height:h,width:w},r.s);
 		imgpos(p[i].prev(),y1);
 	}
 	c.find('a').removeClass('lm');
 	b.addClass('lm').focus();
-	setTimeout(function(){ac=0;},333);
+	setTimeout(function(){ac=0;},200);
 }
 function imgpos(i,p){i.find('span').css('background-position',"0 "+p+"px");}
 function knav(x,e,k){
